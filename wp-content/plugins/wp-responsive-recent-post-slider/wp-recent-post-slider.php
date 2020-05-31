@@ -6,7 +6,7 @@
  * Domain Path: /languages/
  * Description: Add and display Responsive WordPresss Recent Post Slider and Carousel on your website with 4 designs (Slider) and 1 designs (Carousel) using a shortcode. Also added Gutenberg block support. 
  * Author: WP OnlineSupport
- * Version: 2.3
+ * Version: 2.3.1
  * Author URI: https://www.wponlinesupport.com/
  *
  * @package WordPress
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 if( !defined( 'WPRPS_VERSION' ) ) {
-	define( 'WPRPS_VERSION', '2.3' ); // Version of plugin
+	define( 'WPRPS_VERSION', '2.3.1' ); // Version of plugin
 }
 if( !defined( 'WPRPS_DIR' ) ) {
 	define( 'WPRPS_DIR', dirname( __FILE__ ) ); // Plugin dir
@@ -38,6 +38,43 @@ if( !defined( 'WPRPS_POST_TYPE' ) ) {
 if(!defined( 'WPRPS_PLUGIN_LINK' ) ) {
 	define( 'WPRPS_PLUGIN_LINK', 'https://www.wponlinesupport.com/wp-plugin/wp-responsive-recent-post-slider/?utm_source=WP&utm_medium=WP-Plugins&utm_campaign=Features-PRO#fndtn-lifetime' ); // Plugin link
 }
+
+/**
+ * Load Text Domain
+ * This gets the plugin ready for translation
+ * 
+ * @package WP Responsive Recent Post Slider
+ * @since 2.3
+ */
+function wprps_load_textdomain() {
+
+	global $wp_version;
+
+	// Set filter for plugin's languages directory
+	$wpls_pro_lang_dir = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
+	$wpls_pro_lang_dir = apply_filters( 'wprps_languages_directory', $wpls_pro_lang_dir );
+
+	// Traditional WordPress plugin locale filter.
+	$get_locale = get_locale();
+
+	if ( $wp_version >= 4.7 ) {
+		$get_locale = get_user_locale();
+	}
+
+	// Traditional WordPress plugin locale filter
+	$locale = apply_filters( 'plugin_locale',  $get_locale, 'wp-responsive-recent-post-slider' );
+	$mofile = sprintf( '%1$s-%2$s.mo', 'wp-responsive-recent-post-slider', $locale );
+
+	// Setup paths to current locale file
+	$mofile_global  = WP_LANG_DIR . '/plugins/' . basename( WPRPS_DIR ) . '/' . $mofile;
+
+	if ( file_exists( $mofile_global ) ) { // Look in global /wp-content/languages/plugin-name folder
+		load_textdomain( 'wp-responsive-recent-post-slider', $mofile_global );
+	} else { // Load the default language files
+		load_plugin_textdomain( 'wp-responsive-recent-post-slider', false, $wpls_pro_lang_dir );
+	}
+}
+add_action('plugins_loaded', 'wprps_load_textdomain');
 
 /**
  * Activation Hook
@@ -106,18 +143,6 @@ function wprps_plugin_admin_notice() {
 
 // Action to display notice
 add_action( 'admin_notices', 'wprps_plugin_admin_notice');
-
-/**
- * Load Text Domain
- * This gets the plugin ready for translation
- * 
- * @package WP Responsive Recent Post Slider
- * @since 2.3
- */
-function wprps_load_textdomain() {
-	load_plugin_textdomain( 'wp-responsive-recent-post-slider', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
-}
-add_action('plugins_loaded', 'wprps_load_textdomain');
 
 // Function file
 require_once( WPRPS_DIR . '/includes/wppsac-function.php' );

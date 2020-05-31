@@ -2,7 +2,7 @@
 Contributors: wponlinesupport, anoopranawat, pratik-jain
 Tags: wponlinesupport, post slider, posts slider, recent post slider, recent posts slider, slider, responsive post slider, responsive posts slider, responsive recent post slider, responsive recent posts slider, wordpress posts slider, post slideshow, posts slideshow, recent posts slideshow, shortcodes
 Requires at least: 4.0
-Tested up to: 5.4
+Tested up to: 5.4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -78,6 +78,7 @@ Where designs are : design-1, design-2, design-3, design-4. You can use same par
 * **show_author:** [recent_post_slider show_author="false"] (ie Display author name OR not. By default value is "true". Values are "true OR false")
 * **show_read_more:** [recent_post_slider show_read_more="true"] (Display read more button. Values are "true OR false")
 * **rtl:** [recent_post_slider rtl="true"] (for rtl mode. By default value is “false”. Options are “true OR false”).
+* **lazyload:** [recent_post_slider lazyload="ondemand"] (Lazy load images. Defaults to ''. Two options can be passed. 'ondemand', 'progressive')
 
 = Use Following Recent Post Carousel parameters with shortcode =
 <code>[recent_post_carousel]</code>
@@ -102,6 +103,7 @@ Where designs are : design-1, design-2, design-3, design-4. You can use same par
 * **show_author:** [recent_post_carousel show_author="false"] (ie Display author name OR not. By default value is "true". Values are "true OR false")
 * **show_read_more:** [recent_post_carousel show_read_more="true"] (Display read more button. Values are "true OR false")
 * **rtl:** [recent_post_carousel rtl="true"] (for rtl mode. By default value is “false”. Options are “true OR false”).
+* **lazyload:** [recent_post_carousel lazyload="ondemand"] (Lazy load images. Defaults to ''. Two options can be passed. 'ondemand', 'progressive')
 
 = Pro Features include: =
 > <strong>Premium Version</strong><br>
@@ -162,6 +164,11 @@ Where designs are : design-1, design-2, design-3, design-4. You can use same par
 8. Gutenberg Block Support
 
 == Changelog ==
+
+= 2.3.1 (08, May 2020) =
+* [+] New - Added 'lazyload' shortcode parameter for all slider shortcodes. Now you can able to set lazy loading in two different method lazyload="ondemand" OR lazyload="progressive".
+* [+] Update - Minor change in CSS and JS.
+* [*] Template File - Minor template file has been updated. If you have override template file then verify with latest copy.
 
 = 2.3 (13, April 2020) =
 * [+] New - Added Gutenberg block support. Now use plugin easily with Gutenberg!

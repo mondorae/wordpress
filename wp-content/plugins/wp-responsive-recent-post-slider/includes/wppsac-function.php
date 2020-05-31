@@ -93,7 +93,7 @@ function wppsac_slider_designs() {
         'design-1'  	=> __('Design 1', 'wp-responsive-recent-post-slider'),
         'design-2'  	=> __('Design 2', 'wp-responsive-recent-post-slider'),
         'design-3'  	=> __('Design 3', 'wp-responsive-recent-post-slider'),
-        'design-4' 		=> __('Design 4', 'wp-responsive-recent-post-slider'),              
+        'design-4' 		=> __('Design 4', 'wp-responsive-recent-post-slider'),
 	);
 	return apply_filters('wppsac_slider_designs', $design_arr );
 }
@@ -106,7 +106,7 @@ function wppsac_slider_designs() {
  */
 function wppsac_carousel_designs() {
     $design_arr = array(
-        'design-1'  	=> __('Design 1', 'wp-responsive-recent-post-slider'),                  
+        'design-1'  	=> __('Design 1', 'wp-responsive-recent-post-slider'),
 	);
 	return apply_filters('wppsac_carousel_designs', $design_arr );
 }
@@ -118,18 +118,17 @@ function wppsac_carousel_designs() {
  * @since 1.2.5
  */
 function wppsac_add_array(&$array, $value, $index, $from_last = false) {
-    
+
     if( is_array($array) && is_array($value) ) {
 
         if( $from_last ) {
             $total_count    = count($array);
             $index          = (!empty($total_count) && ($total_count > $index)) ? ($total_count-$index): $index;
         }
-        
+
         $split_arr  = array_splice($array, max(0, $index));
         $array      = array_merge( $array, $value, $split_arr);
     }
-    
     return $array;
 }
 
@@ -139,11 +138,10 @@ function wppsac_add_array(&$array, $value, $index, $from_last = false) {
  * @package wp-responsive-recent-post-slider
  * @since 1.2.5
  */
-function wprps_limit_words($string, $word_limit)
-{
+function wprps_limit_words($string, $word_limit) {
     if( !empty($string) ) {
         $content = strip_shortcodes( $string ); // Strip shortcodes
         $content = wp_trim_words( $string, $word_limit, '...' );
         return $content;
-    }   
+    }
 }

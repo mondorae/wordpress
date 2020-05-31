@@ -32,6 +32,7 @@ function wprps_recent_post_slider( $atts, $content = null ) {
 		'show_read_more' 		=> 'true',
 		'media_size'			=> 'full',	
 		'rtl'                  	=> 'false',
+		'lazyload'				=> '',
 		'className'				=> '',
 		'align'					=> '',
 		'extra_class'			=> '',
@@ -39,13 +40,13 @@ function wprps_recent_post_slider( $atts, $content = null ) {
 	
 	$unique 				= wppsac_get_unique();
 	$shortcode_designs 		= wppsac_slider_designs();
-	$posts_per_page 		= !empty($limit) 					? $limit 						: '-1';	
+	$posts_per_page 		= !empty($limit) 					? $limit 						: '10';	
 	$cat 					= (!empty($category)) 				? explode(',', $category) 		: '';	
 	$design 				= ($design && (array_key_exists(trim($design), $shortcode_designs))) ? trim($design) : 'design-1';
-	$showCategory 			= ( $show_category_name == 'false' ) 		? false 				: true;	
-	$showContent 			= ( $show_content == 'false' ) 		? false 						: true;
-	$showDate 				= ( $show_date == 'false') 			? false 						: true;	
-	$showAuthor 			= ( $show_author == 'false') 		? false 						: true;	
+	$showCategory 			= ( $show_category_name == 'true' ) ? true 							: false;	
+	$showContent 			= ( $show_content == 'true' ) 		? true 							: false;
+	$showDate 				= ( $show_date == 'true') 			? true 							: false;	
+	$showAuthor 			= ( $show_author == 'true') 		? true 							: false;	
 	$showreadmore 			= ( $show_read_more == 'false') 	? false 						: true;	
 	$words_limit 			= !empty( $content_words_limit ) 	? $content_words_limit	 		: 20;
 	$dots 					= ( $dots == 'false' ) 				? 'false' 						: 'true';
@@ -58,6 +59,7 @@ function wprps_recent_post_slider( $atts, $content = null ) {
 	$media_size 			= !empty($media_size) 				? $media_size 					: 'full'; // you can use thumbnail, medium, medium_large, large, full
 	$exclude_post			= !empty($hide_post)				? explode(',', $hide_post) 		: array();
 	$posts					= !empty($posts)					? explode(',', $posts) 			: array();
+	$lazyload 				= ( $lazyload == 'ondemand' || $lazyload == 'progressive' ) ? $lazyload 	: ''; // ondemand or progressive
 	$align					= !empty( $align )					? 'align'.$align				: '';
 	$extra_class			= $extra_class .' '. $align .' '. $className;
 	$extra_class			= wppsac_sanitize_html_classes( $extra_class );
@@ -80,7 +82,7 @@ function wprps_recent_post_slider( $atts, $content = null ) {
 	wp_enqueue_script( 'wppsac-public-script' );
 	
 	// Slider configuration
-	$slider_conf = compact('dots', 'arrows', 'autoplay', 'autoplay_interval','speed', 'rtl');
+	$slider_conf = compact('dots', 'arrows', 'autoplay', 'autoplay_interval','speed', 'rtl', 'lazyload');
 	
 	// Taking some global
 	global $post;

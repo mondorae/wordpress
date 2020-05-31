@@ -100,6 +100,10 @@ function wprps_register_guten_block() {
 							'type'		=> 'string',
 							'default'	=> 'full',
 						),
+			'lazyload' => array(
+							'type'		=> 'string',
+							'default'	=> '',
+						),
 			'align' => array(
 							'type'		=> 'string',
 							'default'	=> '',
@@ -169,7 +173,7 @@ function wprps_register_guten_block() {
 						),
 			'speed' => array(
 							'type'		=> 'number',
-							'default'	=> 600,
+							'default'	=> 500,
 						),
 			'posts' => array(
 							'type'		=> 'string',
@@ -198,6 +202,10 @@ function wprps_register_guten_block() {
 			'media_size' => array(
 							'type'		=> 'string',
 							'default'	=> 'full',
+						),
+			'lazyload' => array(
+							'type'		=> 'string',
+							'default'	=> '',
 						),
 			'align' => array(
 							'type'		=> 'string',

@@ -138,7 +138,12 @@ if ( !defined( 'ABSPATH' ) ) {
 	    		<th>Visual Composer Page Builder Supports <span>Use this plugin with Visual Composer easily</span></th>
 	    		<td><i class="dashicons dashicons-no-alt"></i></td>
 	    		<td><i class="dashicons dashicons-yes"></i></td>
-	    	</tr>			
+	    	</tr>	
+			<tr>
+				<th>Image Lazyload <span>Lazyload support for the image.</span></th>
+				<td><i class="dashicons dashicons-yes"></i></td>
+				<td><i class="dashicons dashicons-yes"></i></td>
+			</tr>		
 			<tr>
 				<th>Custom Read More link for Post <span>Redirect post to third party destination if any</span></th>
 				<td><i class="dashicons dashicons-no-alt"></i></td>
