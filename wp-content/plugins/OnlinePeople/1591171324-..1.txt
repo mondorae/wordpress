@@ -1,0 +1,47 @@
+Apache/2.4.43 (Win64) OpenSSL/1.1.1f PHP/7.4.4
+/wordpress/
+E:/App/xampp/php/extras/mibs
+\\xampp\\mysql\\bin
+E:/App/xampp/apache/bin/openssl.cnf
+\\xampp\\php
+\\xampp\\php
+\\xampp\\tmp
+localhost
+keep-alive
+1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 Edg/83.0.478.44
+text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+same-origin
+navigate
+?1
+document
+http://localhost/wordpress/wp-admin/index.php
+gzip, deflate, br
+en-GB,en;q=0.9,en-US;q=0.8
+wordpress_logged_in_bbfa5b726c6b7a9cf3cda9370be3ee91=admin%7C1591291046%7CU1mK9yc09qBVTsVC4h0FWYwgaAUwUDv9ZROjlyleA9c%7C28061531724d97a13cb3c10980bd96765428d681b8e94f16983c9d05343eed00; wp-settings-time-1=1591118633; wp-settings-1=libraryContent%3Dbrowse%26editor%3Dtinymce%26editor_expand%3Doff%26mfold%3Do; PHPSESSID=c474avjdrt2ed16kcdt2lepp6u
+C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;E:\\App\\Git\\cmd;C:\\Users\\mondo\\AppData\\Local\\Microsoft\\WindowsApps;E:\\App\\Microsoft VS Code\\bin
+C:\\Windows
+C:\\Windows\\system32\\cmd.exe
+.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+C:\\Windows
+<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1f PHP/7.4.4 Server at localhost Port 80</address>
+
+localhost
+::1
+80
+::1
+E:/App/xampp/htdocs
+http
+
+E:/App/xampp/htdocs
+postmaster@localhost
+E:/App/xampp/htdocs/wordpress/index.php
+59679
+CGI/1.1
+HTTP/1.1
+GET
+
+/wordpress/index.php
+/wordpress/index.php
+1591171324.618
+1591171324
